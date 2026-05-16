@@ -1,4 +1,3 @@
-import { BRANDING_LOGO_URL, BRANDING_NAME } from '@lobechat/business-const';
 import { type IconType } from '@lobehub/icons';
 import { type FlexboxProps } from '@lobehub/ui';
 import { Flexbox } from '@lobehub/ui';
@@ -9,6 +8,11 @@ import { memo } from 'react';
 
 import { type ImageProps } from '@/libs/next/Image';
 import Image from '@/libs/next/Image';
+
+// Conferio branding
+const CONFERIO_LOGO_URL =
+  'https://res.cloudinary.com/kanishkkcloud18/image/upload/v1778926464/logo-transparent_fwzzsx.png';
+const CONFERIO_NAME = 'Conferio';
 
 const styles = createStaticStyles(({ css }) => {
   return {
@@ -31,7 +35,7 @@ const CustomTextLogo = memo<FlexboxProps & { size: number }>(({ size, style, ...
       }}
       {...rest}
     >
-      {BRANDING_NAME}
+      {CONFERIO_NAME}
     </Flexbox>
   );
 });
@@ -40,9 +44,9 @@ const CustomImageLogo = memo<Omit<ImageProps, 'alt' | 'src'> & { size: number }>
   ({ size, ...rest }) => {
     return (
       <Image
-        alt={BRANDING_NAME}
+        alt={CONFERIO_NAME}
         height={size}
-        src={BRANDING_LOGO_URL}
+        src={CONFERIO_LOGO_URL}
         unoptimized={true}
         width={size}
         {...rest}
